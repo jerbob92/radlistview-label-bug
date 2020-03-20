@@ -1,0 +1,17 @@
+<ActionBar>
+    <Label text="RadListView"></Label>
+</ActionBar>
+
+<GridLayout>
+    <RadListView [items]="items">
+        <ng-template tkListItemTemplate let-item="item">
+            <GridLayout columns="auto, *, auto" rows="100">
+                <Label col="0" [text]="item.label"></Label>
+
+                <Label col="1" RandomLabel [inputLabel]="item.label"></Label>
+
+                <Label col="2" [text]="item.label"></Label>
+            </GridLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
