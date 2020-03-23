@@ -29,10 +29,10 @@ export class RandomLabelDirective implements OnChanges {
         return text;
     }
 
-    setRandomLabel(): Promise<any> {
+    setRandomLabel(): Promise<boolean> {
         let newRandomLabel = "";
 
-        const setLabel = (): Promise<any> => {
+        const setLabel = () => {
             newRandomLabel = "";
 
             newRandomLabel = "Start of " + this.inputLabel + " | " + this.getRandomString() + " | end of " + this.inputLabel;
@@ -42,10 +42,12 @@ export class RandomLabelDirective implements OnChanges {
                 this.el.nativeElement.text = this.randomLabel;
                 this.cdr.markForCheck();
             }
-
-            return Promise.resolve();
         };
 
-        return setLabel();
+        return Promise.resolve().then(() => {
+            setLabel();
+            
+            return true;
+        });
     }
 }
