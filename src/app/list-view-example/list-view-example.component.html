@@ -6,11 +6,11 @@
     <ListView [items]="items">
         <ng-template let-item="item">
             <GridLayout columns="auto, *, auto" rows="100">
-                <Label col="0" [text]="item.label"></Label>
+                <Label col="0" [text]="item.label" style="background-color: green;"></Label>
 
-                <Label col="1" RandomLabel [inputLabel]="item.label" style="background-color: green;"></Label>
+                <Label col="1" [text]="item.label" textAlignment="center" style="background-color: red;"></Label>
 
-                <Label col="2" [text]="item.label"></Label>
+                <Label col="2" RandomLabel [inputLabel]="item.label" style="background-color: green;"></Label>
             </GridLayout>
         </ng-template>
     </ListView>
